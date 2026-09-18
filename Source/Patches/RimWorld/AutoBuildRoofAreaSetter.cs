@@ -13,4 +13,11 @@ public static class AutoBuildRoofAreaSetter_Patch
   {
     return false; // Disable vanilla auto-roof building
   }
+
+  [HarmonyPatch(typeof(AutoBuildRoofAreaSetter), "TryGenerateAreaNow")]
+  [HarmonyPrefix]
+  public static bool TryGenerateAreaNow_Prefix()
+  {
+    return false;
+  }
 }
